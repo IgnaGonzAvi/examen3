@@ -13,19 +13,20 @@ let pickedColor = colors[2];
 let colorDisplay = document.querySelector("#colorDisplay");
 colorDisplay.innerHTML= pickedColor;
 let clickedColor;
-let message = document.getElementById("#message");
-let h1 = document.getElementById("h1");
+let message = document.querySelector("#message");
+let h1 = document.querySelector("h1");
 
 
-for(i=0; i<cuadrados.length; i++){
+for (let i = 0; i < cuadrados.length; i++) {
     cuadrados[i].style.backgroundColor = colors[i];
-    cuadrados[i].addEventListener('click', function(){
+    cuadrados[i].addEventListener("click", function () {
         clickedColor = colors[i];
-        console.log("el elegido" + pickedColor);
-        console.log("el clickeado" + clickedColor);
-        if(clickedColor == pickedColor){
-            message.innerHTML = ("¡Correcto!");
+        console.log(clickedColor);
+        if (pickedColor === clickedColor) {
+            message.textContent = "¡Correcto!";
             h1.style.backgroundColor = colors[i];
+        } else {
+            cuadrados[i].style.backgroundColor = "#232323";
         }
     })
 };
