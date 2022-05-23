@@ -23,6 +23,9 @@ let message = document.querySelector("#message");
 let h1 = document.querySelector("h1");
 colors = generateRandomColors(6);
 let reset = document.querySelector("#reset");
+// botones easy y hard
+let easy = document.querySelector("#easy");
+let hard = document.querySelector("#hard");
 
 // Aquí creamos cuadrados
 for (let i = 0; i < cuadrados.length; i++) {
@@ -94,6 +97,14 @@ reset.addEventListener("click", function () {
 
 })
 
+hard.addEventListener("click", function(){
+    easy.classList.remove("selected");
+    hard.classList.add("selected");
+})
 
+easy.addEventListener("click", function(){
+    hard.classList.remove("selected");
+    easy.classList.add("selected");
+})
 
 
